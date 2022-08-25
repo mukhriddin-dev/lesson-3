@@ -1,0 +1,54 @@
+@import "./card";
+
+
+
+// @include custom-card(300px, 800px, $main-bg-orange, '0px 0px 10px 0px silver' , 10px , 0px);
+
+
+.intro {
+   width: 100%;
+
+   &__wrapper {
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+      padding: 40px;
+
+      .card {
+
+         // @extend %card;
+
+         @include custom-card(300px, 800px, $main-bg-orange, '0px 0px 10px 0px silver' , 10px , 0px);
+
+
+
+         &-image {
+            filter: brightness(0.8);
+            transition: all 0.3s ease;
+
+            &:hover {
+               filter: brightness(1);
+            }
+         }
+
+         &-body {
+            padding: 8px 10px;
+         }
+
+         &:hover {
+            box-shadow: 0px 0px 0px 1px silver;
+         }
+      }
+   }
+
+
+   &__box {
+      display: flex;
+      justify-content: space-around;
+      padding: 40px;
+
+      .box {
+         @extend %card;
+      }
+   }
+}
